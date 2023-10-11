@@ -2,15 +2,16 @@ import React from 'react'
 import './navbar.scss'
 
 import logo from '/assets/movieslogo.svg'
+import homeIcon from '/assets/home.svg'
 
 const Navbar = () => {
   return (
     <div className='navbar__main-wrapper'>
-      <div className='navbar__nav-element'>
+      <div className='navbar__nav-logo'>
         <img src={logo} alt="" />
       </div>
       <div className='navbar__nav-element'>
-        Home
+        <img src={homeIcon} alt="" />
       </div>
       <div className='navbar__nav-element'>
         Movies

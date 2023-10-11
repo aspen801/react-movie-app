@@ -1,3 +1,12 @@
+@mixin flex-center-navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    border-bottom: 2px solid var(--borders-color);
+}
+
 .navbar__main-wrapper {
     color: white;
     position: fixed;
@@ -9,15 +18,18 @@
 }
 
 .navbar__nav-element {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    width: 100%;
-    border-bottom: 2px solid var(--borders-color);
+    @include flex-center-navbar;
+    img {
+        height: auto;
+        width: 28px;
+    }
+}
 
+.navbar__nav-logo {
+    @include flex-center-navbar;
     img {
         height: auto;
         width: 40px;
     }
+    
 }
