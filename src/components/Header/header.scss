@@ -1,13 +1,15 @@
+@use '../../scss/index.scss' as *;
+
 .header__main-wrapper {
     display: flex;
     justify-content: space-around;
     align-items: center;
     position: fixed;
     width: 100%;
-    height: var(--header-height);
-    left: var(--navbar-width);
-    border-bottom: 2px solid var(--borders-color);
-    background-color: var(--borders-color);
+    height: $header-height;
+    left: $navbar-width;
+    border-bottom: 2px solid $borders-color;
+    background-color: $borders-color;
     backdrop-filter: blur(3px);
 }
 

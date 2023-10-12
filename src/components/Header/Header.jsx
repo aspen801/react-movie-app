@@ -21,7 +21,7 @@ const Header = () => {
             <img src={bookmark} alt="" />
           </div>
           <div className='header__right-menu-profile'>
-            <p>Log in</p>
+            <a href='#'>Log in</a>
           </div>
         </div>
     </header>
