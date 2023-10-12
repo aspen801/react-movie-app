@@ -3,6 +3,8 @@ import './navbar.scss'
 
 import logo from '/assets/movieslogo.svg'
 import homeIcon from '/assets/home.svg'
+import movieIcon from '/assets/movie.svg'
+import tvshowIcon from '/assets/tvshow.svg'
 
 const Navbar = () => {
   return (
@@ -14,10 +16,10 @@ const Navbar = () => {
         <img src={homeIcon} alt="" />
       </div>
       <div className='navbar__nav-element'>
-        Movies
+        <img src={movieIcon} alt="" />
       </div>
       <div className='navbar__nav-element'>
-        Trending
+        <img src={tvshowIcon} alt="" />
       </div>
     </div>
   )
