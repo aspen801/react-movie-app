@@ -1,14 +1,5 @@
 @use '../../scss/index.scss' as *;
 
-@mixin flex-center-navbar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    width: 100%;
-    border-bottom: 2px solid $borders-color;
-}
-
 .navbar__main-wrapper {
     color: white;
     position: fixed;
