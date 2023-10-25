@@ -1,78 +1,147 @@
-@use '../../scss/index.scss' as *;
+@use "../../scss/index.scss" as *;
 
 .header__main-wrapper {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    height: $header-height;
-    left: $navbar-width;
-    border-bottom: 2px solid $borders-color;
-    background-color: $borders-color;
-    backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: $header-height;
+  border-bottom: 2px solid $borders-color;
+  background-color: $borders-color;
+  backdrop-filter: blur(3px);
+}
+
+.header__left-section {
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header__logo {
-    img {
-        width: auto;
-        height: 50px;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: auto;
+    height: 50px;
+  }
 }
 
-.header__search-input {
-    position: relative;
-    input {
-        color: rgb(255, 255, 255);
-        font-size: 0.9em;
-        padding: 0 50px 0 50px;
-        background-color: rgba(255, 255, 255, 0.3);
-        backdrop-filter: blur(20px);
-        border: none;
-        border-radius: 30px;
-        width: 35em;
-        height: 50px;
-        transition: backdrop-filter 0.1s ease-in, background-color 0.1s ease-in; 
+.header__nav-links {
+  display: flex;
+  margin-left: 15px;
 
-        &::placeholder {
-            color: rgb(255, 255, 255);
-        }
-        &:focus::placeholder {
-            color: transparent;
-        }
-        &:focus {
-            outline: 1px solid rgba(83, 80, 80, 0.288);
-            background-color: rgba(255, 255, 255, 0);
-            backdrop-filter: none; 
-        }
+  button {
+    font-size: 15px;
+    cursor: pointer;
+    color: rgba(255, 255, 255);
+    border: none;
+    border-radius: $btn-border-radius;
+    width: 100px;
+    height: 35px;
+    padding: 6px 15px 6px 15px;
+    background: none;
+    &:hover {
+      background-color: $btn-hover-color;
     }
-
-
-    img.search-icon{
-        position: absolute;
-        top: 20%;
-        left: 10px;
+    &:active {
+      background-color: $btn-active-color;
     }
+  }
 }
+
+// .header__search-input {
+//     position: relative;
+//     input {
+//         color: rgb(255, 255, 255);
+//         font-size: 0.9em;
+//         padding: 0 50px 0 50px;
+//         background-color: rgba(255, 255, 255, 0.3);
+//         backdrop-filter: blur(20px);
+//         border: none;
+//         border-radius: 30px;
+//         width: 35em;
+//         height: 50px;
+//         transition: backdrop-filter 0.1s ease-in, background-color 0.1s ease-in;
+
+//         &::placeholder {
+//             color: rgb(255, 255, 255);
+//         }
+//         &:focus {
+//             outline: 1px solid rgba(83, 80, 80, 0.288);
+//             background-color: rgba(255, 255, 255, 0);
+//             backdrop-filter: none;
+//         }
+//     }
+
+//     img.search-icon{
+//         position: absolute;
+//         top: 20%;
+//         left: 10px;
+//     }
+// }
 
 .header__right-menu {
-    display: flex;
-    margin-right: 200px;
+  display: flex;
 }
 
-.header__right-menu-favourites {
-    margin-right: 30px;
-    img {
-        height: auto;
-        width: 34px;
-    }
+.header__right-menu-search {
+  margin-right: 30px;
+  img {
+    height: auto;
+    width: 30px;
+  }
+}
+
+.ripple-container {
+  border-radius: $btn-border-radius;
+  margin-right: 13px;
 }
 
 .header__right-menu-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    font-size: 15px;
+    cursor: pointer;
+    color: rgba(255, 255, 255);
+    border: none;
+    border-radius: $btn-border-radius;
+    width: 100px;
+    height: 35px;
+    padding: 6px 15px 6px 15px;
+    background: none;
+  }
+
+  .sign-buttons {
     display: flex;
-    justify-content: center;
     align-items: center;
-    p {
-        color: rgb(255, 255, 255);
-    }   
+    justify-content: center;
+    .sign-in-button {
+      background: none;
+      &:hover {
+        background-color: $btn-hover-color;
+      }
+      &:active {
+        background-color: $btn-active-color;
+      }
+    }
+
+    .sign-up-button {
+      background-color: $movie-green;
+      &:hover {
+        background-color: $movie-green-btn-hover;
+      }
+      &:active {
+        background-color: $movie-green-btn-active;
+      }
+    }
+  }
+  p {
+    color: rgb(255, 255, 255);
+  }
 }
