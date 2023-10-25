@@ -1,9 +1,16 @@
-$navbar-bg-color: rgb(21,24,27);
-$main-bg-color: rgb(17,20,22);
-$secondary-bg-color: rgb(22,25,28);
+$navbar-bg-color: rgb(21, 24, 27);
+$main-bg-color: rgb(17, 20, 22);
+$secondary-bg-color: rgb(22, 25, 28);
+
+$btn-hover-color: rgba(205, 205, 205, 0.2);
+$btn-active-color: rgba(178, 177, 177, 0.2);
+$btn-border-radius: 4px;
+
 $movie-green: rgb(0, 156, 124);
+$movie-green-btn-hover: rgb(0, 140, 112);
+$movie-green-btn-active: rgb(0, 125, 99);
 
 $borders-color: rgba(121, 121, 121, 0.062);
 
 $navbar-width: 100px;
-$header-height: 100px;
+$header-height: 90px;
