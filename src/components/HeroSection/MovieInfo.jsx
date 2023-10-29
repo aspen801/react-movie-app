@@ -1,17 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { getAllGenres } from "../../api/genres.api";
 import "./movieinfo.scss";
-
-const urlMovieGenres =
-  "https://api.themoviedb.org/3/genre/movie/list?language=en";
-const urlTvGenres = "https://api.themoviedb.org/3/genre/tv/list?language=en";
-const options = {
-  method: "GET",
-  headers: {
-    accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMDk4YzRhYjBmNTU2YzI0ZGNjM2VhMDdmZWJhNWFlMyIsInN1YiI6IjY1M2I4Mjc4NTE5YmJiMDBhYjY3Y2QxOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.SNUHh2C-p7b7eW-KPGukdg8XPAJqVqfFXvAFN3RKCPY",
-  },
-};
 
 const MovieInfo = (infoObject) => {
   const [allGenres, setAllGenres] = useState([]);
@@ -19,24 +8,16 @@ const MovieInfo = (infoObject) => {
   const backdropImage = `url(https://image.tmdb.org/t/p/original${info.backdrop_path})`;
 
   useEffect(() => {
-    let genresArray = [];
-    const setGenres = async () => {
-      await fetch(urlMovieGenres, options)
-        .then((res) => res.json())
-        .then((json) => {
-          genresArray.push(...json.genres);
-        })
-        .catch((err) => console.error("error:" + err));
-      await fetch(urlTvGenres, options)
-        .then((res) => res.json())
-        .then((json) => {
-          genresArray.push(...json.genres);
-        })
-        .catch((err) => console.error("error:" + err));
-
-      setAllGenres(genresArray);
+    const fetchData = async () => {
+      try {
+        const allGenres = await getAllGenres();
+        setAllGenres(allGenres.genres);
+      } catch (error) {
+        console.error("Error fetching genres:", error);
+      }
     };
-    setGenres();
+
+    fetchData();
   }, []);
 
   return (
