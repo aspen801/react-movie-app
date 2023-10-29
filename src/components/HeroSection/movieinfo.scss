@@ -4,7 +4,7 @@
   position: relative;
   display: flex;
   justify-content: start;
-  padding: 0 30px 0 30px;
+  padding: 0 0 0 100px;
   align-items: center;
   height: 900px;
   background-size: cover;
@@ -15,6 +15,7 @@
 @media (max-width: 900px) {
   .movie-info__wrapper {
     height: 650px;
+    padding: 0 30px 0 30px;
     background-position: center;
     object-fit: contain;
   }
@@ -64,16 +65,14 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     p {
+      display: flex;
+      align-items: center;
       background-color: rgba(213, 210, 206, 0.558);
       border-radius: 15px;
       margin-right: 5px;
       padding: 5px;
-      white-space: normal;
-      text-wrap: balance;
-      display: -webkit-box;
+
       text-overflow: ellipsis;
-      overflow: hidden;
-      -webkit-line-clamp: 1;
     }
   }
 }
