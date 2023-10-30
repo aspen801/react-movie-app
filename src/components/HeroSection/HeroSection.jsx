@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { getTrendingMedia } from "../../api/media.api";
 import MovieInfo from "./MovieInfo";
 import "swiper/css";
+import "swiper/css/pagination";
+
 import "./herosection.scss";
 
 const HeroSection = () => {
@@ -25,9 +27,11 @@ const HeroSection = () => {
   return (
     <div className="hero__main-wrapper">
       <Swiper
-        modules={[Autoplay]}
+        modules={[Autoplay, Pagination]}
         className="swiper"
-        autoplay={{ delay: 3000, disableOnInteraction: true }}
+        speed={1000}
+        autoplay={{ delay: 2500, disableOnInteraction: true }}
+        pagination={{ clickable: true }}
       >
         {infos.map((infoObject) => (
           <SwiperSlide>
