@@ -1,20 +1,12 @@
 @use "../../scss/index.scss" as *;
 
-:root {
-  --swiper-pagination-color: rgb(0, 156, 124);
-  --swiper-pagination-bullet-size: 2px;
-  --swiper-pagination-bullet-border-radius: 0px;
-  --swiper-pagination-bullet-width: 20px;
-  --swiper-pagination-bullet-height: 10px;
-}
-
 .movie-info__wrapper {
   position: relative;
   display: flex;
   justify-content: start;
   padding: 0 0 0 100px;
   align-items: center;
-  height: 900px;
+  height: 820px;
   background-size: cover;
   background-position: top;
   object-fit: cover;
@@ -116,7 +108,7 @@
   .title {
     h1 {
       font-size: 48px;
-      text-align: justify;
+
       display: -webkit-box;
       overflow: hidden;
       -webkit-box-orient: vertical;
