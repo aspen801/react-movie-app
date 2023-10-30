@@ -3,7 +3,7 @@ import { createRipples } from "react-ripples";
 import "./header.scss";
 
 import textLogo from "/assets/textlogo.svg";
-import bookmark from "/assets/bookmark.svg";
+import moonLogo from "/assets/moon.svg";
 import search from "/assets/search.svg";
 
 const MyRipples = createRipples({
@@ -51,7 +51,14 @@ const Header = () => {
 
       <div className="header__right-menu">
         <div className="header__right-menu-search">
-          <img className="search-icon" src={search} alt="" />
+          <button>
+            <img className="search-icon" src={search} alt="" />
+          </button>
+        </div>
+        <div className="header__right-menu-theme-toggle">
+          <button>
+            <img className="search-icon" src={moonLogo} alt="" />
+          </button>
         </div>
         <div className="header__right-menu-profile">
           <div className="sign-buttons">
