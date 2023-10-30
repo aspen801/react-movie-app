@@ -11,6 +11,10 @@
   border-bottom: 2px solid $borders-color;
   background-color: $borders-color;
   backdrop-filter: blur(3px);
+  .ripple-container {
+    border-radius: $btn-border-radius;
+    margin-right: 13px;
+  }
 }
 
 .header__left-section {
@@ -94,11 +98,6 @@
     height: auto;
     width: 30px;
   }
-}
-
-.ripple-container {
-  border-radius: $btn-border-radius;
-  margin-right: 13px;
 }
 
 .header__right-menu-profile {
