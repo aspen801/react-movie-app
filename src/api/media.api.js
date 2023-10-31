@@ -17,6 +17,16 @@ const getTrendingMedia = async ({ mediaType, mediaTimeWindow }) => {
   return await response.json();
 };
 
+const getMediaList = async ({ mediaType, mediaCategory }) => {
+  const response = await fetch(`${tmdb.baseUrl}/${mediaEndpoints.list({ mediaType, mediaCategory })}?language=en-US`, {
+    headers: {
+      Authorization: `Bearer ${tmdb.key}`,
+    },
+  });
+
+  return await response.json();
+};
+
 const getMediaById = async ({ mediaType, mediaId }) => {
   const response = await fetch(`${tmdb.baseUrl}/${mediaEndpoints.detail({ mediaType, mediaId })}`, {
     headers: {
@@ -27,4 +37,4 @@ const getMediaById = async ({ mediaType, mediaId }) => {
   return await response.json();
 };
 
-export { getTrendingMedia, getMediaById };
+export { getTrendingMedia, getMediaList, getMediaById };
