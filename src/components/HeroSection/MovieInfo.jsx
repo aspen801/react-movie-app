@@ -31,10 +31,7 @@ const MovieInfo = (infoObject) => {
   }, []);
 
   return (
-    <div
-      className="movie-info__wrapper"
-      style={{ backgroundImage: backdropImage }}
-    >
+    <div className="movie-info__wrapper" style={{ backgroundImage: backdropImage }}>
       <div className="movie-info__description-block">
         <div className="movie-info__secondary-info">
           <div className="rating">
@@ -44,21 +41,12 @@ const MovieInfo = (infoObject) => {
           <div className="duration"></div>
           <div className="genres">
             {[...info.genre_ids].map((genreId, index) => (
-              <p>
-                {allGenres.find((e) => e.id === genreId) &&
-                  allGenres.find((e) => e.id === genreId).name}
-              </p>
+              <p>{allGenres.find((e) => e.id === genreId) && allGenres.find((e) => e.id === genreId).name}</p>
             ))}
           </div>
         </div>
         <div className="movie-info__main-info">
-          <div className="title">
-            {info.media_type === "movie" ? (
-              <h1>{info.title}</h1>
-            ) : (
-              <h1>{info.name}</h1>
-            )}
-          </div>
+          <div className="title">{info.media_type === "movie" ? <h1>{info.title}</h1> : <h1>{info.name}</h1>}</div>
           <div className="overview">
             <p>{info.overview}</p>
           </div>
