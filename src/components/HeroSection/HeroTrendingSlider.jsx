@@ -10,7 +10,6 @@ import "./herotrendingslider.scss";
 
 const HeroTrendingSlider = ({ mediaType, mediaTimeWindow }) => {
   const [infos, setInfos] = useState([]);
-  console.log(mediaTimeWindow);
 
   useEffect(() => {
     const fetchData = async () => {
