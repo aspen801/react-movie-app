@@ -3,7 +3,7 @@ import tmdb from "./configs/tmbd.config";
 const mediaEndpoints = {
   trending: ({ mediaType, mediaTimeWindow }) => `trending/${mediaType}/${mediaTimeWindow}`,
   list: ({ mediaType, mediaCategory }) => `${mediaType}/${mediaCategory}`,
-  detail: ({ mediaType, mediaId }) => `${mediaType}/detail/${mediaId}`,
+  detail: ({ mediaType, mediaId }) => `${mediaType}/${mediaId}`,
   search: ({ mediaType, query, page }) => `${mediaType}/search?query=${query}&page=${page}`,
 };
 
