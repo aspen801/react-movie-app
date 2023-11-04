@@ -1,0 +1,45 @@
+@use "../../scss/index.scss" as *;
+
+.media-card__main-wrapper {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 15px;
+  }
+  img {
+    border-radius: 8px;
+  }
+}
+
+.media-card__title {
+  margin-top: 15px;
+  max-height: 100%;
+  width: 100%;
+  h1 {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: 18px;
+    color: $movie-green;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+}
+
+.media-card__info {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  hr {
+    height: 20px;
+    border: 1px solid $movie-green;
+  }
+}
