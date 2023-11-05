@@ -1,17 +1,23 @@
-import React from 'react'
-import './app.scss'
-import Header from './components/Header/Header'
-import HomePage from './pages/HomePage/HomePage'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import "./app.scss";
+import Header from "./components/Header/Header";
+import HomePage from "./pages/HomePage/HomePage";
+import MoviesPage from "./pages/MoviesPage/MoviesPage";
+import SeriesPage from "./pages/SeriesPage/SeriesPage";
 
 function App() {
-  
-
   return (
     <>
       <Header />
-      <HomePage />
+      <Routes>
+        <Route path={"/"} element={<HomePage />} />
+        <Route path={"/movies"} element={<MoviesPage />} />
+        <Route path={"/series"} element={<SeriesPage />} />
+        {/* <Route path={"/persons"} element={<PersonsPage />} />  */}
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
