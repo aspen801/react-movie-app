@@ -1,0 +1,9 @@
+@use "../../scss/index.scss" as *;
+
+.seriespage__main-wrapper {
+  padding-top: $header-height;
+  min-height: 2000px;
+  img {
+    width: 100%;
+  }
+}
