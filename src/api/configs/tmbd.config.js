@@ -8,6 +8,7 @@ const tmbd = {
   },
   mediaCategory: {
     now_playing: "now_playing",
+    airing_today: "airing_today",
     popular: "popular",
     top_rated: "top_rated",
     upcoming: "upcoming",
