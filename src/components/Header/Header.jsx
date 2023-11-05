@@ -1,5 +1,6 @@
 import React from "react";
 import { createRipples } from "react-ripples";
+import { Link } from "react-router-dom";
 import "./header.scss";
 
 import textLogo from "/assets/textlogo.svg";
@@ -22,9 +23,12 @@ const Header = () => {
   return (
     <header className="header__main-wrapper">
       <div className="header__left-section">
-        <div className="header__logo">
-          <img src={textLogo} alt="" />
-        </div>
+        <Link to={"/"}>
+          <div className="header__logo">
+            <img src={textLogo} alt="" />
+          </div>
+        </Link>
+
         <div className="header__nav-links">
           <MyRipples className="ripple-container">
             <a href="#">
@@ -32,14 +36,18 @@ const Header = () => {
             </a>
           </MyRipples>
           <MyRipples className="ripple-container">
-            <a href="#">
-              <button className="nav-button">Movies</button>
-            </a>
+            <Link to={"/movies"}>
+              <a href="#">
+                <button className="nav-button">Movies</button>
+              </a>
+            </Link>
           </MyRipples>
           <MyRipples className="ripple-container">
-            <a href="#">
-              <button className="nav-button">Series</button>
-            </a>
+            <Link to={"/series"}>
+              <a href="#">
+                <button className="nav-button">Series</button>
+              </a>
+            </Link>
           </MyRipples>
           <MyRipples className="ripple-container">
             <a href="#">
