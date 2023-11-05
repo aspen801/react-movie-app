@@ -2,9 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Scrollbar } from "swiper/modules";
 import { getMediaList } from "../../api/media.api";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 
 import "./mediaslider.scss";
 
@@ -18,7 +15,6 @@ const MediaSlider = ({ mediaType, mediaCategory }) => {
       try {
         const data = await getMediaList({ mediaType, mediaCategory });
         setMedia(data.results);
-        console.log("Media: " + media);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -32,7 +28,7 @@ const MediaSlider = ({ mediaType, mediaCategory }) => {
         modules={[Navigation, Scrollbar]}
         className="swiper"
         speed={500}
-        spaceBetween={20}
+        spaceBetween={30}
         slidesPerView={6}
         // updateOnWindowResize={false}
         breakpointsBase={"container"}
@@ -43,7 +39,8 @@ const MediaSlider = ({ mediaType, mediaCategory }) => {
           830: {
             slidesPerView: 3,
           },
-          1080: {
+          1280: {
+            grabCursor: true,
             slidesPerView: 4,
           },
           1480: {
@@ -57,8 +54,8 @@ const MediaSlider = ({ mediaType, mediaCategory }) => {
         {media
           .sort(() => Math.random() - 0.5)
           .map((mediaObject) => (
-            <SwiperSlide>
-              <MediaCard info={mediaObject} mediaType={mediaType} />
+            <SwiperSlide style={{ minHeight: "100%" }}>
+              <MediaCard media={mediaObject} mediaType={mediaType} />
             </SwiperSlide>
           ))}
       </Swiper>
