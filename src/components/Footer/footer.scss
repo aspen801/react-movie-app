@@ -1,0 +1,53 @@
+@use "../../scss/index.scss" as *;
+
+.footer__main-wrapper {
+  color: rgb(255, 255, 255);
+  margin-top: 100px;
+  height: 200px;
+  border-top: 2px solid $borders-color;
+}
+
+.footer__logo-container {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: auto;
+    height: 50px;
+    padding-right: 8px;
+  }
+  a {
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    &:hover {
+      background: none;
+    }
+  }
+}
+
+.footer__info {
+  margin: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+    border-bottom: 1px solid white;
+    &:hover {
+      border: none;
+    }
+  }
+
+  p {
+    font-size: 15px;
+  }
+  img {
+    width: auto;
+    height: 15px;
+  }
+}
+
+.footer__info a:visited {
+  color: rgb(255, 255, 255);
+}
