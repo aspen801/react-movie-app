@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import "./header.scss";
 
 import textLogo from "/assets/textlogo.svg";
+import mLogo from "/assets/mlogo.svg";
+import boxLogo from "/assets/boxlogo.svg";
 import moonLogo from "/assets/moon.svg";
 import search from "/assets/search.svg";
 
@@ -23,11 +25,13 @@ const Header = () => {
   return (
     <header className="header__main-wrapper">
       <div className="header__left-section">
-        <Link to={"/"}>
-          <div className="header__logo">
-            <img src={textLogo} alt="" />
-          </div>
-        </Link>
+        <div className="header__logo-link-container">
+          <Link to={"/"}>
+            <div className="header__logo">
+              <img src={mLogo} alt="" />
+            </div>
+          </Link>
+        </div>
 
         <div className="header__nav-links">
           <MyRipples className="ripple-container">
