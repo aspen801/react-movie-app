@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getMediaById } from "../../api/media.api";
-import useTimeConvert from "./hooks/useTimeConvert";
+import useTimeConvert from "../../hooks/useTimeConvert";
 import "./mediacard.scss";
 
 import loadingCircle from "/assets/loadingcircle.svg";
