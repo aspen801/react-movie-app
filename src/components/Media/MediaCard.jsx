@@ -5,6 +5,7 @@ import useTimeConvert from "../../hooks/useTimeConvert";
 import "./mediacard.scss";
 
 import loadingCircle from "/assets/loadingcircle.svg";
+import posterAlt from "/assets/posterdefault.png";
 
 const MediaCard = ({ media, mediaType }) => {
   const [mediaDetails, setMediaDetails] = useState();
@@ -25,11 +26,8 @@ const MediaCard = ({ media, mediaType }) => {
 
   return mediaDetails ? (
     <Link to={`/details/${mediaType}/${media.id}`}>
-      <div className="media-card__main-wrapper" /*style={{ backgroundImage: posterImage }}*/>
-        <div className="media-card__img-container">
-          <img src={posterImage} alt="" />
-        </div>
-
+      <div className="media-card__main-wrapper">
+        <div className="media-card__img-container">{media.poster_path ? <img src={posterImage} alt="" /> : <img src={posterAlt} alt="" />}</div>
         <div className="media-card_title-info-container">
           <div className="media-card__title">
             <h1>{media.title || media.name}</h1>
@@ -41,7 +39,7 @@ const MediaCard = ({ media, mediaType }) => {
             </p>{" "}
             {/*(mediaDetails && mediaDetails.genres[0].name) || "No data"*/}
             <hr />
-            <p className="center">{media.release_date ? media.release_date.split("-")[0] : media.first_air_date.split("-")[0]}</p>
+            <p className="center">{media.release_date ? media.release_date.split("-")[0] : media.first_air_date?.split("-")[0] || "No data"}</p>
             <hr />
             <p className="end">{mediaDetails && mediaDetails.runtime ? useTimeConvert(mediaDetails.runtime) : mediaDetails && `ep${mediaDetails.number_of_episodes}`}</p>
           </div>
