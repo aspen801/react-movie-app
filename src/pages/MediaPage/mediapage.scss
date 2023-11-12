@@ -1,0 +1,28 @@
+@use "../../scss/index.scss" as *;
+
+.mediapage__main-wrapper {
+  padding-top: $header-height;
+  min-height: 100vh;
+}
+
+.mediapage__rest-details {
+  display: flex;
+  flex-direction: column;
+  .title {
+    margin-bottom: 25px;
+    width: 100%;
+    color: white;
+    border-bottom: 2px solid $movie-green;
+    font-weight: 500;
+    font-size: 33px;
+    align-self: start;
+  }
+
+  padding: 0 20% 0 20%;
+}
+
+@media (max-width: 800px) {
+  .mediapage__rest-details {
+    padding: 0 2% 0 2%;
+  }
+}
