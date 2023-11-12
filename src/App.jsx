@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import MoviesPage from "./pages/MoviesPage/MoviesPage";
 import SeriesPage from "./pages/SeriesPage/SeriesPage";
+import MediaPage from "./pages/MediaPage/MediaPage";
 import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path={"/"} element={<HomePage />} />
         <Route path={"/movies"} element={<MoviesPage />} />
         <Route path={"/series"} element={<SeriesPage />} />
+        <Route path={"/details/:mediaType/:mediaId"} element={<MediaPage />} />
       </Routes>
       <Footer />
     </>
