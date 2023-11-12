@@ -14,6 +14,9 @@
   .ripple-container {
     border-radius: $btn-border-radius;
     margin-right: 13px;
+    &.unactive {
+      pointer-events: none;
+    }
   }
 }
 
@@ -53,7 +56,7 @@
     color: rgba(255, 255, 255);
     border: none;
     border-radius: $btn-border-radius;
-    width: 100px;
+    width: 100%;
     height: 35px;
     padding: 6px 15px 6px 15px;
     background: none;

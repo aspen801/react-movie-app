@@ -34,29 +34,21 @@ const Header = () => {
         </div>
 
         <div className="header__nav-links">
-          <MyRipples className="ripple-container">
-            <a href="#">
-              <button className="nav-button">Upcoming</button>
-            </a>
+          <MyRipples className="ripple-container unactive">
+            <button className="nav-button">Upcoming</button>
           </MyRipples>
           <MyRipples className="ripple-container">
             <Link to={"/movies"}>
-              <a href="#">
-                <button className="nav-button">Movies</button>
-              </a>
+              <button className="nav-button">Movies</button>
             </Link>
           </MyRipples>
           <MyRipples className="ripple-container">
             <Link to={"/series"}>
-              <a href="#">
-                <button className="nav-button">Series</button>
-              </a>
+              <button className="nav-button">Series</button>
             </Link>
           </MyRipples>
-          <MyRipples className="ripple-container">
-            <a href="#">
-              <button className="nav-button">Persons</button>
-            </a>
+          <MyRipples className="ripple-container unactive">
+            <button className="nav-button">Persons</button>
           </MyRipples>
         </div>
       </div>
@@ -75,14 +67,10 @@ const Header = () => {
         <div className="header__right-menu-profile">
           <div className="sign-buttons">
             <MyRipples className="ripple-container">
-              <a href="#">
-                <button className="sign-in-button">Sign In</button>
-              </a>
+              <button className="sign-in-button">Sign In</button>
             </MyRipples>
             <MyRipples className="ripple-container">
-              <a href="#">
-                <button className="sign-up-button">Sign Up</button>
-              </a>
+              <button className="sign-up-button">Sign Up</button>
             </MyRipples>
           </div>
         </div>
