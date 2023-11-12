@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { getAllGenres } from "../../api/genres.api";
 import { createRipples } from "react-ripples";
 import "./movieinfo.scss";
@@ -53,11 +54,14 @@ const MovieInfo = (infoObject) => {
         </div>
         <div className="movie-info__buttons">
           <MyRipples className="ripple-container">
-            <button className="buttons_info">
-              <img src={infoIcon} alt="" />
-              Information
-            </button>
+            <Link to={`/details/${info.media_type}/${info.id}`}>
+              <button className="buttons_info">
+                <img src={infoIcon} alt="" />
+                Information
+              </button>{" "}
+            </Link>
           </MyRipples>
+
           <MyRipples className="ripple-container">
             <button className="buttons_favourite">
               <img src={heartIcon} alt="" />
