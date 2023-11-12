@@ -5,6 +5,9 @@ const mediaEndpoints = {
   list: ({ mediaType, mediaCategory }) => `${mediaType}/${mediaCategory}`,
   detail: ({ mediaType, mediaId }) => `${mediaType}/${mediaId}`,
   search: ({ mediaType, query, page }) => `${mediaType}/search?query=${query}&page=${page}`,
+  videos: ({ mediaType, mediaId }) => `${mediaType}/${mediaId}/videos`,
+  credits: ({ mediaType, mediaId }) => `${mediaType}/${mediaId}/credits`,
+  similar: ({ mediaType, mediaId }) => `${mediaType}/${mediaId}/similar`,
 };
 
 const getTrendingMedia = async ({ mediaType, mediaTimeWindow }) => {
@@ -37,4 +40,42 @@ const getMediaById = async ({ mediaType, mediaId }) => {
   return await response.json();
 };
 
-export { getTrendingMedia, getMediaList, getMediaById };
+const getAllDetails = async ({ mediaType, mediaId }) => {
+  const movieDetailsresponse = await fetch(`${tmdb.baseUrl}/${mediaEndpoints.detail({ mediaType, mediaId })}`, {
+    headers: {
+      Authorization: `Bearer ${tmdb.key}`,
+    },
+  });
+
+  const movieVideosResponse = await fetch(`${tmdb.baseUrl}/${mediaEndpoints.videos({ mediaType, mediaId })}?language=en`, {
+    headers: {
+      Authorization: `Bearer ${tmdb.key}`,
+    },
+  });
+
+  const movieCreditsResponse = await fetch(`${tmdb.baseUrl}/${mediaEndpoints.credits({ mediaType, mediaId })}?language=en`, {
+    headers: {
+      Authorization: `Bearer ${tmdb.key}`,
+    },
+  });
+
+  const movieSimilarResponse = await fetch(`${tmdb.baseUrl}/${mediaEndpoints.similar({ mediaType, mediaId })}?language=en`, {
+    headers: {
+      Authorization: `Bearer ${tmdb.key}`,
+    },
+  });
+
+  const movieDetails = await movieDetailsresponse.json();
+  const movieVideos = await movieVideosResponse.json();
+  const movieCredits = await movieCreditsResponse.json();
+  const movieSimilar = await movieSimilarResponse.json();
+
+  return {
+    details: movieDetails,
+    videos: movieVideos,
+    credits: movieCredits,
+    similar: movieSimilar,
+  };
+};
+
+export { getTrendingMedia, getMediaList, getMediaById, getAllDetails };
