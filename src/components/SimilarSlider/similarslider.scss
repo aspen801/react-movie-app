@@ -1,0 +1,25 @@
+@use "../../scss/index.scss" as *;
+
+.similar-slider__main-wrapper {
+  position: relative;
+  .swiper-slide {
+    min-height: 100% !important;
+    height: auto;
+  }
+}
+
+.similar-slider__main-wrapper::before {
+  pointer-events: none;
+  box-shadow: -74px -3px 29px -38px $main-bg-color inset;
+  -webkit-box-shadow: -74px -3px 29px -38px $main-bg-color inset;
+  -moz-box-shadow: -74px -3px 29px -38px $main-bg-color inset;
+
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: none;
+  z-index: 2;
+}
