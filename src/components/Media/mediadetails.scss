@@ -166,15 +166,6 @@
 .media-details__bottom-section {
   display: flex;
   flex-direction: column;
-  h1 {
-    margin-bottom: 25px;
-    width: 100%;
-    border-bottom: 2px solid $movie-green;
-    color: white;
-    font-weight: 500;
-    font-size: 33px;
-    align-self: start;
-  }
   padding: 30px 20% 30px 20%;
 }
 
