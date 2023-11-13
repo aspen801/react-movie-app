@@ -1,0 +1,11 @@
+@use "../../../scss/index.scss" as *;
+
+.block-title__main-wrapper {
+  margin-bottom: 25px;
+  width: 100%;
+  color: white;
+  border-bottom: 2px solid $movie-green;
+  font-weight: 500;
+  font-size: 33px;
+  align-self: start;
+}
