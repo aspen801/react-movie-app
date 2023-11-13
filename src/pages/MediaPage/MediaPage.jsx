@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import MediaContainer from "../../components/Media/MediaContainer";
+import BlockTitle from "../../components/UI/BlockTitle/BlockTitle";
 import MediaDetails from "../../components/Media/MediaDetails";
 import SimilarSlider from "../../components/SimilarSlider/SimilarSlider";
 import CastSlider from "../../components/People/CastSlider/CastSlider";
@@ -32,12 +33,12 @@ const MediaPage = () => {
 
   return mediaDetails ? (
     <div className="mediapage__main-wrapper">
-      <MediaDetails details={mediaDetails.details} />
+      <MediaDetails details={mediaDetails?.details} />
       <div className="mediapage__rest-details">
-        <h1 className="title">Cast</h1>
+        <BlockTitle name={"Cast"} />
         <CastSlider credits={mediaDetails?.credits.cast} />
-        <h1 className="title">Similar</h1>
-        <SimilarSlider media={mediaDetails.similar.results} mediaType={mediaType} />
+        <BlockTitle name={"Similar"} />
+        <SimilarSlider media={mediaDetails?.similar.results} mediaType={mediaType} />
       </div>
     </div>
   ) : (
