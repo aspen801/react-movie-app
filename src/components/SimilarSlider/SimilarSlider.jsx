@@ -2,6 +2,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Scrollbar } from "swiper/modules";
 import MediaCard from "../Media/MediaCard";
+import BlockPlacholder from "../UI/BlockPlaceholder/BlockPlaceholder";
 
 import "./similarslider.scss";
 
@@ -31,11 +32,15 @@ const SimilarSlider = ({ media, mediaType }) => {
           },
         }}
       >
-        {media.map((mediaObject) => (
-          <SwiperSlide style={{ minHeight: "100%" }}>
-            <MediaCard media={mediaObject} mediaType={mediaType} />
-          </SwiperSlide>
-        ))}
+        {media.length > 0 ? (
+          media.map((mediaObject) => (
+            <SwiperSlide style={{ minHeight: "100%" }}>
+              <MediaCard media={mediaObject} mediaType={mediaType} />
+            </SwiperSlide>
+          ))
+        ) : (
+          <BlockPlacholder text={"No similar media :("} />
+        )}
       </Swiper>
     </div>
   );
