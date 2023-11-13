@@ -2,11 +2,11 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Scrollbar } from "swiper/modules";
 import CastCard from "../CastCard/CastCard";
+import BlockPlacholder from "../../UI/BlockPlaceholder/BlockPlaceholder";
 
 import "./castslider.scss";
 
 const CastSlider = ({ credits }) => {
-  console.log(credits);
   return (
     <div className="cast-slider__main-wrapper">
       <Swiper
@@ -31,11 +31,15 @@ const CastSlider = ({ credits }) => {
           },
         }}
       >
-        {credits.map((personality) => (
-          <SwiperSlide style={{ minHeight: "100%" }}>
-            <CastCard personality={personality} />
-          </SwiperSlide>
-        ))}
+        {credits.length > 0 ? (
+          credits.map((personality) => (
+            <SwiperSlide style={{ minHeight: "100%" }}>
+              <CastCard personality={personality} />
+            </SwiperSlide>
+          ))
+        ) : (
+          <BlockPlacholder text={"No cast information yet :( "} />
+        )}
       </Swiper>
     </div>
   );
