@@ -1,0 +1,12 @@
+@use "../../../scss/index.scss" as *;
+
+.block-placeholder__main-wrapper {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    color: white;
+    font-size: $fs-m;
+  }
+}
