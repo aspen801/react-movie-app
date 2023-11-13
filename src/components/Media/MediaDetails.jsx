@@ -1,5 +1,7 @@
 import React from "react";
 import { createRipples } from "react-ripples";
+import BlockTitle from "../UI/BlockTitle/BlockTitle";
+import BlockPlacholder from "../UI/BlockPlaceholder/BlockPlaceholder";
 
 import "./mediadetails.scss";
 
@@ -90,8 +92,8 @@ const MediaDetails = ({ details }) => {
       </div>
       <div className="media-details__bottom-section">
         <div className="media-details__overwiev-container">
-          <h1>Overwiev</h1>
-          <p>{details.overview || "No overview yet :("}</p>
+          <BlockTitle name={"Overwiev"} />
+          <p>{details.overview ? details.overview : <BlockPlacholder text={"No overwiev yet :("} />}</p>
         </div>
 
         {/* <div className="media-details__trailer-container">
