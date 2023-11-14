@@ -5,7 +5,7 @@ import "./loading.scss";
 
 const Loading = () => {
   return (
-    <div className="loading-page__main-wrapper">
+    <div className="loading__main-wrapper">
       <Progress size="sm" isIndeterminate className="progress-bar" />
     </div>
   );
