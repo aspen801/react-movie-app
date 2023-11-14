@@ -6,12 +6,14 @@ import HomePage from "./pages/HomePage/HomePage";
 import MoviesPage from "./pages/MoviesPage/MoviesPage";
 import SeriesPage from "./pages/SeriesPage/SeriesPage";
 import MediaPage from "./pages/MediaPage/MediaPage";
+import LoadingPage from "./pages/LoadingPage/LoadingPage";
 import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <>
       <Header />
+      <LoadingPage />
       <Routes>
         <Route path={"/"} element={<HomePage />} />
         <Route path={"/movies"} element={<MoviesPage />} />
