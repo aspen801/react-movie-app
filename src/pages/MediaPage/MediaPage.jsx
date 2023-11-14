@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import MediaContainer from "../../components/Media/MediaContainer";
 import BlockTitle from "../../components/UI/BlockTitle/BlockTitle";
 import MediaDetails from "../../components/Media/MediaDetails";
 import SimilarSlider from "../../components/SimilarSlider/SimilarSlider";
 import CastSlider from "../../components/People/CastSlider/CastSlider";
-import Loading from "../../components/Loading/Loading";
 import { getAllDetails } from "../../api/media.api";
+
+import { setLoading } from "../../store/slices/loadingSlice";
 
 import "./mediapage.scss";
 
 //TODO: rework: all data fetch inside components, loading set by redux
 
 const MediaPage = () => {
+  const dispatch = useDispatch();
   const [mediaDetails, setMediaDetails] = useState();
   const { mediaType, mediaId } = useParams();
 
@@ -21,8 +23,10 @@ const MediaPage = () => {
 
     const fetchData = async () => {
       try {
+        dispatch(setLoading(true));
         const mediaDetails = await getAllDetails({ mediaType, mediaId });
         setMediaDetails(mediaDetails);
+        dispatch(setLoading(false));
       } catch (error) {
         console.error("Error fetching media details:", error);
       }
@@ -42,7 +46,7 @@ const MediaPage = () => {
       </div>
     </div>
   ) : (
-    <Loading />
+    <div className="placeholder-div" />
   );
 };
 
