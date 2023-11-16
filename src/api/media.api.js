@@ -3,6 +3,7 @@ import tmdb from "./configs/tmbd.config";
 const mediaEndpoints = {
   trending: ({ mediaType, mediaTimeWindow }) => `trending/${mediaType}/${mediaTimeWindow}`,
   list: ({ mediaType, mediaCategory }) => `${mediaType}/${mediaCategory}`,
+  upcoming: ({ mediaType }) => `discover/${mediaType}`,
   detail: ({ mediaType, mediaId }) => `${mediaType}/${mediaId}`,
   search: ({ mediaType, query, page }) => `${mediaType}/search?query=${query}&page=${page}`,
   videos: ({ mediaType, mediaId }) => `${mediaType}/${mediaId}/videos`,
@@ -16,6 +17,19 @@ const getTrendingMedia = async ({ mediaType, mediaTimeWindow }) => {
       Authorization: `Bearer ${tmdb.key}`,
     },
   });
+
+  return await response.json();
+};
+
+const getUpcomingMedia = async ({ mediaType }) => {
+  const response = await fetch(
+    `${tmdb.baseUrl}/${mediaEndpoints.upcoming({ mediaType })}?&language=en-US&page=1&primary_release_date.gte=${new Date().toJSON().slice(0, 10).replace(/-/g, "-")}`,
+    {
+      headers: {
+        Authorization: `Bearer ${tmdb.key}`,
+      },
+    }
+  );
 
   return await response.json();
 };
@@ -78,4 +92,4 @@ const getAllDetails = async ({ mediaType, mediaId }) => {
   };
 };
 
-export { getTrendingMedia, getMediaList, getMediaById, getAllDetails };
+export { getTrendingMedia, getUpcomingMedia, getMediaList, getMediaById, getAllDetails };
