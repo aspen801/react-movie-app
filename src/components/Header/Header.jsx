@@ -34,8 +34,10 @@ const Header = () => {
         </div>
 
         <div className="header__nav-links">
-          <MyRipples className="ripple-container unactive">
-            <button className="nav-button">Upcoming</button>
+          <MyRipples className="ripple-container">
+            <Link to="/upcoming">
+              <button className="nav-button">Upcoming</button>
+            </Link>
           </MyRipples>
           <MyRipples className="ripple-container">
             <Link to={"/movies"}>
