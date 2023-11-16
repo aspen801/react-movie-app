@@ -3,6 +3,8 @@ import { createRipples } from "react-ripples";
 import BlockTitle from "../UI/BlockTitle/BlockTitle";
 import BlockPlacholder from "../UI/BlockPlaceholder/BlockPlaceholder";
 
+import formaters from "../../utils/formaters";
+
 import "./mediadetails.scss";
 
 import starIcon from "/assets/star.svg";
@@ -16,7 +18,7 @@ const MyRipples = createRipples({
   during: 800,
 });
 
-//TODO: move all data transformation to API layer
+//TODO: move all data transformation to utils
 
 const MediaDetails = ({ details }) => {
   const posterImage = `https://image.tmdb.org/t/p/w500${details?.poster_path}`;
@@ -51,7 +53,7 @@ const MediaDetails = ({ details }) => {
             </div>
             <div className="rating">
               <img src={starIcon} alt="" />
-              <span>{details.vote_average.toString().slice(0, 3)}/10 • IMDb Rating</span>
+              <span>{formaters.formatRating(details.vote_average)}/10 • IMDb Rating</span>
             </div>
             <div className="buttons_trailer">
               <MyRipples className="ripples-container">
@@ -64,21 +66,19 @@ const MediaDetails = ({ details }) => {
             <div className="info">
               <p>Release date:</p>
               <span>
-                {details.release_date?.toString().slice(0, 4) ||
-                  details.first_air_date?.toString().slice(0, 4) ||
-                  details.seasons[0].air_date?.toString().slice(0, 4) ||
+                {formaters.formatDate(details.release_date) ||
+                  formaters.formatDate(details.first_air_date) ||
+                  formaters.formatDate(details.seasons[0].air_date) ||
                   "Error fetching date"}
               </span>
               <p>{details.media_type === "movie" ? "Running time:" : "Number of episodes:"}</p>
               <span>{(details.runtime && `${details.runtime}m`) || details.number_of_episodes}</span>
               <p>Country: </p>
-              <span>
-                {details.origin_country || details.production_countries.map((country, i) => `${country.name}${i < details.production_countries.length - 1 ? " • " : ""}`)}
-              </span>
+              <span>{details.origin_country || formaters.formatCountries(details.production_countries)}</span>
               {details.budget ? (
                 <>
                   <p>Budget:</p>
-                  <span>${details.budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</span>
+                  <span>${formaters.formatBudget(details.budget)}</span>
                 </>
               ) : (
                 <>
