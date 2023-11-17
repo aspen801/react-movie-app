@@ -14,19 +14,20 @@
 }
 
 body {
-  background-color: $main-bg-color !important;
+  color: var(--text-color);
+  background-color: var(--main-bg-color) !important;
 }
 
 a {
-  color: #ffff;
+  color: var(--text-color);
   text-decoration: none;
   &:visited {
-    color: #ffff;
+    color: var(--text-color);
   }
 }
 
 ::-webkit-scrollbar {
-  background: $secondary-bg-color;
+  background: var(--secondary-bg-color);
 }
 
 ::-webkit-scrollbar-thumb {
