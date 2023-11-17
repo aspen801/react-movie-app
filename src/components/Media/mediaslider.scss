@@ -10,9 +10,9 @@
 
 .media-slider__main-wrapper::before {
   pointer-events: none;
-  box-shadow: -74px -3px 29px -38px $main-bg-color inset;
-  -webkit-box-shadow: -74px -3px 29px -38px $main-bg-color inset;
-  -moz-box-shadow: -74px -3px 29px -38px $main-bg-color inset;
+  box-shadow: -74px -3px 29px -38px var(--main-bg-color) inset;
+  -webkit-box-shadow: -74px -3px 29px -38px var(--main-bg-color) inset;
+  -moz-box-shadow: -74px -3px 29px -38px var(--main-bg-color) inset;
 
   content: "";
   position: absolute;

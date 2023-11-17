@@ -2,7 +2,7 @@
 
 .loading-page__main-wrapper {
   color: white;
-  background-color: $main-bg-color;
+  background-color: var(--main-bg-color);
   opacity: 0;
   pointer-events: none;
   width: 100vw;

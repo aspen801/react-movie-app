@@ -1,10 +1,10 @@
 @use "../../scss/index.scss" as *;
 
 .footer__main-wrapper {
-  color: rgb(255, 255, 255);
+  color: var(--text-color);
   margin-top: 100px;
   height: 200px;
-  border-top: 2px solid $borders-color;
+  border-top: 2px solid var(--borders-color);
 }
 
 .footer__logo-container {
@@ -33,7 +33,7 @@
   justify-content: center;
   align-items: center;
   a {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid var(--text-color);
     &:hover {
       border: none;
     }
@@ -49,5 +49,5 @@
 }
 
 .footer__info a:visited {
-  color: rgb(255, 255, 255);
+  color: var(--text-color);
 }
