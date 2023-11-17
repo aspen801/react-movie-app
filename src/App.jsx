@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "./app.scss";
+import "./scss/themecolours.scss";
 import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import MoviesPage from "./pages/MoviesPage/MoviesPage";
@@ -11,6 +13,15 @@ import LoadingPage from "./pages/LoadingPage/LoadingPage";
 import Footer from "./components/Footer/Footer";
 
 function App() {
+  const { theme } = useSelector((state) => state.theme);
+
+  useEffect(() => {
+    const setTheme = () => {
+      document.documentElement.setAttribute("theme-mode", theme);
+    };
+    setTheme();
+  }, [theme]);
+
   return (
     <>
       <Header />
