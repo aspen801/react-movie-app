@@ -193,6 +193,9 @@
   }
 }
 
-.search-icon {
-  fill: black;
+.icon {
+  width: auto;
+  height: 25px;
+  fill: var(--text-color);
+  stroke: var(--text-color);
 }

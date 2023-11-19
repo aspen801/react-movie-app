@@ -1,13 +1,17 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { createRipples } from "react-ripples";
 import { Link } from "react-router-dom";
 import "./header.scss";
 
+import { themeActions } from "../../store/slices/themeSlice";
+
 import textLogo from "/assets/textlogo.svg";
 import mLogo from "/assets/mlogo.svg";
 import boxLogo from "/assets/boxlogo.svg";
-import moonLogo from "/assets/moon.svg";
-import search from "/assets/search.svg";
+import MoonIcon from "../../assets/moon.svg?react";
+import SunIcon from "../../assets/sun.svg?react";
+import SearchIcon from "../../assets/search.svg?react";
 
 const MyRipples = createRipples({
   color: "rgba(255, 255, 255, 0.2)",
@@ -22,6 +26,14 @@ const MyRipples = createRipples({
 }
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const { theme } = useSelector((state) => state.theme);
+
+  const handleThemeChange = () => {
+    dispatch(themeActions.toggleTheme());
+  };
+
   return (
     <header className="header__main-wrapper">
       <div className="header__left-section">
@@ -58,13 +70,11 @@ const Header = () => {
       <div className="header__right-menu">
         <div className="header__right-menu-search">
           <button>
-            <img className="search-icon" src={search} alt="" />
+            <SearchIcon className="icon" />
           </button>
         </div>
         <div className="header__right-menu-theme-toggle">
-          <button>
-            <img className="search-icon" src={moonLogo} alt="" />
-          </button>
+          <button onClick={handleThemeChange}>{theme === "dark" ? <MoonIcon className="icon" /> : <SunIcon className="icon" />}</button>
         </div>
         <div className="header__right-menu-profile">
           <div className="sign-buttons">
