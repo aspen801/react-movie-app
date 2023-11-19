@@ -66,9 +66,9 @@ const MediaDetails = ({ details }) => {
             <div className="info">
               <p>Release date:</p>
               <span>
-                {formaters.formatDate(details.release_date) ||
-                  formaters.formatDate(details.first_air_date) ||
-                  formaters.formatDate(details.seasons[0].air_date) ||
+                {(details.first_air_date && formaters.formatDate(details.first_air_date)) ||
+                  (details.release_date && formaters.formatDate(details.release_date)) ||
+                  (details.seasons[0].air_date && formaters.formatDate(details.seasons[0].air_date)) ||
                   "Error fetching date"}
               </span>
               <p>{details.media_type === "movie" ? "Running time:" : "Number of episodes:"}</p>
