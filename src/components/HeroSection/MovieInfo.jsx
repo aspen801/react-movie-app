@@ -23,10 +23,9 @@ const MovieInfo = ({ info, genres }) => {
             <img src={starIcon} alt="" />
             <p>{info?.vote_average?.toString().slice(0, 3)}/10</p>
           </div>
-          <div className="duration"></div>
           <div className="genres">
-            {[...info?.genre_ids].map((genreId) => (
-              <p>{genres.find((e) => e.id === genreId)?.name}</p>
+            {[...info.genre_ids].map((genreId) => (
+              <p>{genres.find((e) => e?.id === genreId)?.name || "Error fetching genres"}</p>
             ))}
           </div>
         </div>
