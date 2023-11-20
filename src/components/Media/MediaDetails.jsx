@@ -20,7 +20,7 @@ const MyRipples = createRipples({
 
 //TODO: move all data transformation to utils
 
-const MediaDetails = ({ details }) => {
+const MediaDetails = ({ details, mediaType }) => {
   const posterImage = `https://image.tmdb.org/t/p/w500${details?.poster_path}`;
   const backdropImage = `url(https://image.tmdb.org/t/p/original${details?.backdrop_path})`;
 
@@ -71,7 +71,7 @@ const MediaDetails = ({ details }) => {
                   (details.seasons[0].air_date && formaters.formatDate(details.seasons[0].air_date)) ||
                   "Error fetching date"}
               </span>
-              <p>{details.media_type === "movie" ? "Running time:" : "Number of episodes:"}</p>
+              <p>{mediaType === "movie" ? "Running time:" : "Number of episodes:"}</p>
               <span>{(details.runtime && `${details.runtime}m`) || details.number_of_episodes}</span>
               <p>Country: </p>
               <span>{details.origin_country || formaters.formatCountries(details.production_countries)}</span>
