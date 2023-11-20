@@ -41,7 +41,7 @@ const MediaCard = ({ media, mediaType }) => {
             <hr />
             <p className="center">{media.release_date ? media.release_date.split("-")[0] : media.first_air_date?.split("-")[0] || "No data"}</p>
             <hr />
-            <p className="end">{mediaDetails && mediaDetails.runtime ? useTimeConvert(mediaDetails.runtime) : mediaDetails && `ep${mediaDetails.number_of_episodes}`}</p>
+            <p className="end">{mediaDetails?.runtime ? useTimeConvert(mediaDetails.runtime) : mediaDetails && `ep${mediaDetails.number_of_episodes}`}</p>
           </div>
         </div>
       </div>

@@ -52,7 +52,7 @@ const MediaSlider = ({ mediaType, mediaCategory }) => {
         }}
       >
         {media
-          .sort(() => Math.random() - 0.5)
+          .sort(() => Math.random())
           .map((mediaObject) => (
             <SwiperSlide style={{ minHeight: "100%" }}>
               <MediaCard media={mediaObject} mediaType={mediaType} />
