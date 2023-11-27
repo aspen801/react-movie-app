@@ -9,7 +9,7 @@ const MyRipples = createRipples({
 });
 
 function RippleButton({ children, width, buttonType, submit, textColor, onClick, to }) {
-  const isSubmit = submit ? { type: "submit" } : {};
+  const isSubmit = submit ? { type: "submit" } : { type: "button" };
 
   return to ? (
     <div className="ripple-button__main-wrapper" style={{ width: `${width}` }}>
