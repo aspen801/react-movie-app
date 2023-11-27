@@ -10,11 +10,13 @@ import SeriesPage from "./pages/SeriesPage/SeriesPage";
 import MediaPage from "./pages/MediaPage/MediaPage";
 import UpcomingPage from "./pages/UpcomingPage/UpcomingPage";
 import LoadingPage from "./pages/LoadingPage/LoadingPage";
+import AuthModal from "./components/AuthModal/AuthModal";
 import Footer from "./components/Footer/Footer";
 
 function App() {
   const { theme } = useSelector((state) => state.theme);
 
+  //TODO: make in separate hook, add theme memorization and user system theme check
   useEffect(() => {
     const setTheme = () => {
       document.documentElement.setAttribute("theme-mode", theme);
@@ -26,6 +28,7 @@ function App() {
     <>
       <Header />
       <LoadingPage />
+      <AuthModal />
       <Routes>
         <Route path={"/"} element={<HomePage />} />
         <Route path={"/upcoming"} element={<UpcomingPage />} />
