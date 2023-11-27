@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="footer__info">
         <p>
           Made by aspen801{" "}
-          <a target="_blank" href="https://github.com/aspen801/react-shopping-cart">
+          <a target="_blank" href="https://github.com/aspen801/react-movie-app">
             GitHub
           </a>
         </p>
