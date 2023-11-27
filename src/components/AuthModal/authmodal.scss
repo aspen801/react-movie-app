@@ -1,0 +1,86 @@
+@use "../../scss/index.scss" as *;
+
+.auth-modal__main-wrapper {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  &.visible {
+    display: flex;
+  }
+}
+
+.auth-modal__heading {
+  h1 {
+    font-size: $fs-l;
+    color: var(--text-color);
+    margin-bottom: 30px;
+  }
+}
+
+.auth-modal__form-container {
+  position: relative;
+  border-radius: 15px;
+  padding: 30px 50px;
+  width: 550px;
+  height: auto;
+  background-color: var(--main-bg-color);
+}
+
+.auth-modal__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  form {
+    width: 100%;
+  }
+  .chakra-form-control {
+    margin-bottom: 15px;
+  }
+  .chakra-form__label {
+    font-size: $fs-m;
+    color: var(--text-color);
+  }
+  .chakra-input {
+    font-size: $fs-s;
+    color: var(--text-color);
+    border-color: var(--borders-color);
+  }
+}
+
+.auth-modal__input {
+  margin-bottom: 20px;
+  color: var(--text-color);
+  border-color: var(--borders-color);
+}
+
+.auth-modal__buttons {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+  justify-content: center;
+  align-items: center;
+}
+
+.closing-cross {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  .icon {
+    stroke: $btn-active-color;
+    width: auto;
+    height: 50px;
+    &:hover {
+      stroke: var(--text-color);
+    }
+  }
+}
