@@ -1,8 +1,7 @@
 import React from "react";
-import { createRipples } from "react-ripples";
+import RippleButton from "../UI/RippleButton/RippleButton";
 import BlockTitle from "../UI/BlockTitle/BlockTitle";
 import BlockPlacholder from "../UI/BlockPlaceholder/BlockPlaceholder";
-
 import formaters from "../../utils/formaters";
 
 import "./mediadetails.scss";
@@ -12,13 +11,6 @@ import heartIcon from "/assets/heart.svg";
 import playIcon from "/assets/play.svg";
 
 import posterAlt from "/assets/posterdefault.png";
-
-const MyRipples = createRipples({
-  color: "rgba(255, 255, 255, 0.2)",
-  during: 800,
-});
-
-//TODO: move all data transformation to utils
 
 const MediaDetails = ({ details, mediaType }) => {
   const posterImage = `https://image.tmdb.org/t/p/w500${details?.poster_path}`;
@@ -30,12 +22,10 @@ const MediaDetails = ({ details, mediaType }) => {
         <div className="media-details__info-container">
           <div className="media-details__poster-container">
             <div className="image-container">{details?.poster_path ? <img src={posterImage} alt="" /> : <img src={posterAlt} alt="" />}</div>
-            <MyRipples className="ripples-container">
-              <button>
-                <img src={heartIcon} alt="" />
-                Favourite
-              </button>
-            </MyRipples>
+            <RippleButton buttonType={"secondary"} textColor={"white"} width={"100%"}>
+              <img src={heartIcon} alt="" />
+              Favourite
+            </RippleButton>
           </div>
           <div className="media-details__details-container">
             <div className="title">
@@ -56,12 +46,10 @@ const MediaDetails = ({ details, mediaType }) => {
               <span>{formaters.formatRating(details.vote_average)}/10 • IMDb Rating</span>
             </div>
             <div className="buttons_trailer">
-              <MyRipples className="ripples-container">
-                <button>
-                  <img src={playIcon} alt="" />
-                  Watch trailer
-                </button>
-              </MyRipples>
+              <RippleButton width={"200px"} buttonType={"primary"}>
+                <img src={playIcon} alt="" />
+                Watch trailer
+              </RippleButton>
             </div>
             <div className="info">
               <p>Release date:</p>
