@@ -1,16 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { createRipples } from "react-ripples";
+import RippleButton from "../UI/RippleButton/RippleButton";
 import "./movieinfo.scss";
 
 import infoIcon from "/assets/info.svg";
 import heartIcon from "/assets/heart.svg";
 import starIcon from "/assets/star.svg";
-
-const MyRipples = createRipples({
-  color: "rgba(255, 255, 255, 0.2)",
-  during: 800,
-});
 
 const MovieInfo = ({ info, genres }) => {
   const backdropImage = `url(https://image.tmdb.org/t/p/original${info.backdrop_path})`;
@@ -36,21 +30,14 @@ const MovieInfo = ({ info, genres }) => {
           </div>
         </div>
         <div className="movie-info__buttons">
-          <MyRipples className="ripple-container">
-            <Link to={`/details/${info?.media_type}/${info?.id}`}>
-              <button className="buttons_info">
-                <img src={infoIcon} alt="" />
-                Information
-              </button>{" "}
-            </Link>
-          </MyRipples>
-
-          <MyRipples className="ripple-container">
-            <button className="buttons_favourite">
-              <img src={heartIcon} alt="" />
-              Favourite
-            </button>
-          </MyRipples>
+          <RippleButton buttonType={"primary"} to={`/details/${info?.media_type}/${info?.id}`}>
+            <img src={infoIcon} alt="" />
+            Information
+          </RippleButton>
+          <RippleButton buttonType={"secondary"} textColor={"white"} onClick={false}>
+            <img src={heartIcon} alt="" />
+            Favourite
+          </RippleButton>
         </div>
       </div>
     </div>
