@@ -19,7 +19,7 @@ const MovieInfo = ({ info, genres }) => {
           </div>
           <div className="genres">
             {[...info.genre_ids].map((genreId) => (
-              <p>{genres.find((e) => e?.id === genreId)?.name || "Error fetching genres"}</p>
+              <p key={genreId}>{genres.find((e) => e?.id === genreId)?.name || "Error fetching genres"}</p>
             ))}
           </div>
         </div>
@@ -34,7 +34,7 @@ const MovieInfo = ({ info, genres }) => {
             <img src={infoIcon} alt="" />
             Information
           </RippleButton>
-          <RippleButton buttonType={"secondary"} textColor={"white"} onClick={false}>
+          <RippleButton buttonType={"secondary"} textColor={"white"}>
             <img src={heartIcon} alt="" />
             Favourite
           </RippleButton>

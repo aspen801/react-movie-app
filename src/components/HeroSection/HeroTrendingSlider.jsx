@@ -48,7 +48,7 @@ const HeroTrendingSlider = ({ mediaType, mediaTimeWindow }) => {
     <div className="hero__main-wrapper ${">
       <Swiper modules={[Autoplay, Pagination]} className="swiper" speed={1000} autoplay={{ delay: 2500, disableOnInteraction: true }} pagination={{ clickable: true }}>
         {infos.map((infoData) => (
-          <SwiperSlide>
+          <SwiperSlide key={infoData.id}>
             <MovieInfo info={infoData} genres={allGenres} />
           </SwiperSlide>
         ))}
