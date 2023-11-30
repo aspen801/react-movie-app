@@ -2,13 +2,13 @@ $text-color: rgb(255, 255, 255);
 $header-bg-color: rgb(24, 27, 29);
 $main-bg-color: rgb(17, 20, 22);
 $secondary-bg-color: rgb(22, 25, 28);
-$borders-color: rgba(121, 121, 121, 0.062);
+$borders-color: rgba(121, 121, 121, 0.06);
 
 $light-text-color: rgb(0, 0, 0);
 $light-header-bg-color: rgb(243, 242, 241);
 $light-main-bg-color: rgb(243, 242, 241);
 $light-secondary-bg-color: rgb(243, 242, 241);
-$light-borders-color: darken(rgba(121, 121, 121, 0.062), 50%);
+$light-borders-color: darken(rgba(121, 121, 121, 0.06), 50%);
 
 $btn-hover-color: rgba(205, 205, 205, 0.2);
 $btn-active-color: rgba(178, 177, 177, 0.2);
@@ -17,3 +17,5 @@ $btn-border-radius: 4px;
 $movie-green: rgb(0, 156, 124);
 $movie-green-btn-hover: rgb(0, 140, 112);
 $movie-green-btn-active: rgb(0, 125, 99);
+
+$movie-gray: rgba(121, 121, 121, 0.3);
