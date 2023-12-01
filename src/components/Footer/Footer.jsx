@@ -10,7 +10,7 @@ const Footer = () => {
       </div>
       <div className="footer__info">
         <p>
-          Made by aspen801
+          Made by aspen801 {""}
           <a target="_blank" href="https://github.com/aspen801/react-movie-app">
             GitHub
           </a>
@@ -18,7 +18,7 @@ const Footer = () => {
       </div>
       <div className="footer__info">
         <p>
-          Using
+          Using {""}
           <a target="_blank" href="https://developer.themoviedb.org/docs">
             TMDB API
           </a>
