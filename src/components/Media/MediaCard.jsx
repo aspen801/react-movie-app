@@ -39,7 +39,7 @@ const MediaCard = ({ media, mediaType }) => {
             </p>{" "}
             {/*(mediaDetails && mediaDetails.genres[0].name) || "No data"*/}
             <hr />
-            <p className="center">{media.release_date ? media.release_date.split("-")[0] : media.first_air_date?.split("-")[0] || "No data"}</p>
+            <p className="center">{media.release_date ? media.release_date.split("-")[0] : media.first_air_date?.split("-")[0] || "TBA"}</p>
             <hr />
             <p className="end">{mediaDetails?.runtime ? useTimeConvert(mediaDetails.runtime) : mediaDetails && `ep${mediaDetails.number_of_episodes}`}</p>
           </div>
