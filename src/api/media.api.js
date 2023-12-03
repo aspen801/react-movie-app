@@ -5,7 +5,7 @@ const mediaEndpoints = {
   list: ({ mediaType, mediaCategory }) => `${mediaType}/${mediaCategory}`,
   upcoming: ({ mediaType }) => `discover/${mediaType}`,
   detail: ({ mediaType, mediaId }) => `${mediaType}/${mediaId}`,
-  search: ({ mediaType, query, page }) => `${mediaType}/search?query=${query}&page=${page}`,
+  search: ({ mediaType, query, page }) => `search/${mediaType}?query=${query}&page=${page}`,
   videos: ({ mediaType, mediaId }) => `${mediaType}/${mediaId}/videos`,
   credits: ({ mediaType, mediaId }) => `${mediaType}/${mediaId}/credits`,
   similar: ({ mediaType, mediaId }) => `${mediaType}/${mediaId}/similar`,
@@ -55,7 +55,7 @@ const getMediaById = async ({ mediaType, mediaId }) => {
 };
 
 const getAllDetails = async ({ mediaType, mediaId }) => {
-  const movieDetailsresponse = await fetch(`${tmdb.baseUrl}/${mediaEndpoints.detail({ mediaType, mediaId })}`, {
+  const movieDetailsResponse = await fetch(`${tmdb.baseUrl}/${mediaEndpoints.detail({ mediaType, mediaId })}`, {
     headers: {
       Authorization: `Bearer ${tmdb.key}`,
     },
@@ -79,7 +79,7 @@ const getAllDetails = async ({ mediaType, mediaId }) => {
     },
   });
 
-  const movieDetails = await movieDetailsresponse.json();
+  const movieDetails = await movieDetailsResponse.json();
   const movieVideos = await movieVideosResponse.json();
   const movieCredits = await movieCreditsResponse.json();
   const movieSimilar = await movieSimilarResponse.json();
@@ -92,4 +92,18 @@ const getAllDetails = async ({ mediaType, mediaId }) => {
   };
 };
 
-export { getTrendingMedia, getUpcomingMedia, getMediaList, getMediaById, getAllDetails };
+const searchMedia = async ({ query, page }) => {
+  const multiSearchResponse = await fetch(`${tmdb.baseUrl}/${mediaEndpoints.search({ mediaType: "multi", query, page })}`, {
+    headers: {
+      Authorization: `Bearer ${tmdb.key}`,
+    },
+  });
+
+  const multiSearch = await multiSearchResponse.json();
+
+  const sortedResults = await multiSearch.results.filter((result) => result.media_type !== "person");
+
+  return { searchResults: sortedResults };
+};
+
+export { getTrendingMedia, getUpcomingMedia, getMediaList, getMediaById, getAllDetails, searchMedia };
