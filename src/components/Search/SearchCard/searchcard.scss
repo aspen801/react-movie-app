@@ -1,0 +1,63 @@
+@use "../../../scss/index.scss" as *;
+
+.search-card__main-wrapper {
+  cursor: pointer;
+  user-select: none;
+  height: 100%;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  h1 {
+    font-size: 15px;
+  }
+  &:hover .search-card__title h1 {
+    text-decoration: underline;
+  }
+}
+
+.search-card__img-container {
+  height: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+}
+
+.search-card_title-info-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.search-card__title {
+  h1 {
+    display: block !important;
+
+    justify-content: start;
+    align-items: center;
+    font-weight: $fw-m;
+    font-size: $fs-s;
+    color: $movie-green;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.search-card__release-date {
+  color: $movie-gray;
+}
+
+.search-card__loader-wrapper {
+  display: flex;
+  min-height: 100px;
+  justify-content: center;
+  align-items: center;
+  .chakra-spinner {
+    color: $movie-green;
+  }
+}
