@@ -1,0 +1,13 @@
+@use "../../scss/index.scss" as *;
+
+.errorpage__main-wrapper {
+  padding-top: $header-height;
+  min-height: 100vh;
+}
+
+.errorpage__error-message {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
