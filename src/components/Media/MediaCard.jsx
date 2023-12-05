@@ -9,7 +9,7 @@ import posterAlt from "/assets/posterdefault.png";
 
 const MediaCard = ({ media, mediaType }) => {
   const [mediaDetails, setMediaDetails] = useState();
-  const posterImage = `https://image.tmdb.org/t/p/w500${media.poster_path}`;
+  const posterImage = `https://image.tmdb.org/t/p/w500${media?.poster_path}`;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,7 +35,7 @@ const MediaCard = ({ media, mediaType }) => {
           <div className="media-card__info">
             <p className="start">
               <span>★</span>
-              {media.vote_average.toString().slice(0, 3)}
+              {media.vote_average?.toString().slice(0, 3)}
             </p>{" "}
             {/*(mediaDetails && mediaDetails.genres[0].name) || "No data"*/}
             <hr />
