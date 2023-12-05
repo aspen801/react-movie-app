@@ -1,9 +1,5 @@
 @use "../../scss/index.scss" as *;
 
 .upcoming-page__main-wrapper {
-  padding-top: 170px;
-}
-
-.upcoming-page__title-block {
-  padding: 0 4% 0 4%;
+  padding-top: $header-height * 2;
 }
