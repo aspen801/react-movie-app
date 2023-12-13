@@ -1,0 +1,54 @@
+@use "../../../scss/index.scss" as *;
+
+.burger-menu__main-wrapper {
+  padding: 15px;
+  position: absolute;
+  top: $header-height;
+  left: 0;
+  height: 100vh;
+  width: 280px;
+  background-color: var(--secondary-bg-color);
+}
+
+.burger-menu__divider {
+  margin: 10px 0;
+  width: 100%;
+  border: 1px solid var(--borders-color);
+}
+
+.burger-menu__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: auto;
+    height: 40px;
+  }
+}
+
+.burger-menu__controls {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.burger-menu__theme-toggle {
+  margin-right: 15px;
+  button {
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: none;
+    border: none;
+    &:hover {
+      border-radius: 50%;
+      background-color: $btn-hover-color;
+    }
+  }
+  img {
+    height: auto;
+    width: 30px;
+  }
+}
