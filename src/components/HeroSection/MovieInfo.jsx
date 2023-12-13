@@ -1,13 +1,41 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import RippleButton from "../UI/RippleButton/RippleButton";
+import { auth } from "../../firebase/index";
+import { getFavoriteMovies, addFavoriteMovie, removeFavoriteMovie } from "../../firebase/favorites";
+
 import "./movieinfo.scss";
 
 import infoIcon from "/assets/info.svg";
 import heartIcon from "/assets/heart.svg";
+import deleteIcon from "/assets/broken-heart.svg";
 import starIcon from "/assets/star.svg";
 
 const MovieInfo = ({ info, genres }) => {
+  const { user } = useSelector((state) => state.user);
+  const [isFavorite, setIsFavorite] = useState(false);
   const backdropImage = `url(https://image.tmdb.org/t/p/original${info.backdrop_path})`;
+
+  useEffect(() => {
+    const getData = async () => {
+      if (user !== null) {
+        const data = await getFavoriteMovies(auth.currentUser.uid);
+
+        setIsFavorite(data.find((obj) => obj?.mediaId == info.id) !== undefined);
+      }
+    };
+
+    getData();
+  }, [user]);
+
+  const handleAddToFavorites = () => {
+    addFavoriteMovie(auth.currentUser.uid, info.id, info.media_type);
+    setIsFavorite(true);
+  };
+  const handleRemoveFromFavorites = () => {
+    removeFavoriteMovie(auth.currentUser.uid, info.id, info.media_type);
+    setIsFavorite(false);
+  };
 
   return (
     <div className="movie-info__wrapper" style={{ backgroundImage: backdropImage }}>
@@ -34,10 +62,17 @@ const MovieInfo = ({ info, genres }) => {
             <img src={infoIcon} alt="" />
             Information
           </RippleButton>
-          <RippleButton buttonType={"secondary"} textColor={"white"}>
-            <img src={heartIcon} alt="" />
-            Favourite
-          </RippleButton>
+          {isFavorite && user ? (
+            <RippleButton onClick={handleRemoveFromFavorites} buttonType={"delete"} textColor={"white"}>
+              <img src={deleteIcon} alt="" />
+              Remove from favorites
+            </RippleButton>
+          ) : (
+            <RippleButton onClick={handleAddToFavorites} buttonType={"secondary"} textColor={"white"}>
+              <img src={heartIcon} alt="" />
+              Favorite
+            </RippleButton>
+          )}
         </div>
       </div>
     </div>
