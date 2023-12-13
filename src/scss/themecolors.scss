@@ -1,10 +1,9 @@
-@use "colours" as *;
+@use "colors" as *;
 
 html[theme-mode="dark"] {
   --text-color: #{$text-color};
   --header-bg-color: #{$header-bg-color};
   --main-bg-color: #{$main-bg-color};
-  --secondary-bg-color: #{$secondary-bg-color};
   --secondary-bg-color: #{$secondary-bg-color};
   --borders-color: #{$borders-color};
 }
