@@ -36,8 +36,9 @@ const MediaPage = () => {
   }, [mediaId]);
 
   return mediaDetails ? (
+    // <TrailerModal />
     <div className="mediapage__main-wrapper">
-      <MediaDetails details={mediaDetails?.details} mediaType={mediaType} />
+      <MediaDetails details={mediaDetails?.details} videos={mediaDetails?.videos} mediaType={mediaType} />
       <div className="mediapage__rest-details">
         <BlockTitle name={"Cast"} />
         <CastSlider credits={mediaDetails?.credits.cast} />

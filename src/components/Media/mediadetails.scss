@@ -18,6 +18,55 @@
   background: rgba(0, 0, 0, 0.5);
 }
 
+.media-details__trailer-modal {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  &.visible {
+    display: flex;
+  }
+}
+.media-details__modal-closing-cross {
+  position: absolute;
+  top: 0;
+  right: 5px;
+}
+
+.media-details__trailer-modal-container {
+  position: relative;
+  top: 0;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px;
+  width: 95%;
+  height: 90%;
+  bottom: $header-height - 40px;
+  background-color: var(--main-bg-color);
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+  h1 {
+    font-size: $fs-l;
+    color: var(--text-color);
+  }
+}
+
+@media (max-width: 800px) {
+  .media-details__trailer-modal-container {
+    height: 50%;
+  }
+}
+
 .media-details__info-container {
   width: 100%;
   padding: 30px 20% 30px 20%;
