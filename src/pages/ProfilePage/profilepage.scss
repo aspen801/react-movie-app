@@ -1,0 +1,30 @@
+@use "../../scss/index.scss" as *;
+
+.profile-page__main-wrapper {
+  padding-top: $header-height * 2;
+  min-height: 100vh;
+}
+
+.profile-page__favorites-container {
+  padding: 0 200px 0 200px;
+  margin: 100px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-page__favorites-grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  grid-template-rows: repeat(auto-fit, 1fr);
+  gap: 30px;
+  width: 100%;
+}
+
+.profile-page__favorite-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
