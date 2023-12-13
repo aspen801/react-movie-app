@@ -1,0 +1,9 @@
+.nav-links__main-wrapper {
+  display: flex;
+  gap: 10px;
+  margin-left: 15px;
+  &.vertical {
+    flex-direction: column;
+    margin: 0;
+  }
+}
