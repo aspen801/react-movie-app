@@ -3,7 +3,7 @@ import React from "react";
 const useStopVideos = () => {
   return () => {
     const videos = document.querySelectorAll("iframe, video");
-    Array.prototype.forEach.call(videos, function (video) {
+    Array.prototype.forEach.call(videos, (video) => {
       if (video.tagName.toLowerCase() === "video") {
         video.pause();
       } else {
