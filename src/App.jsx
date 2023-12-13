@@ -11,6 +11,7 @@ import MediaPage from "./pages/MediaPage/MediaPage";
 import UpcomingPage from "./pages/UpcomingPage/UpcomingPage";
 import LoadingPage from "./pages/LoadingPage/LoadingPage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import AuthModal from "./components/AuthModal/AuthModal";
 import Footer from "./components/Footer/Footer";
 
@@ -52,6 +53,7 @@ function App() {
         <Route path={"/upcoming"} element={<UpcomingPage />} />
         <Route path={"/movies"} element={<MoviesPage />} />
         <Route path={"/series"} element={<SeriesPage />} />
+        <Route path={"/profile"} element={<ProfilePage />} />
         <Route path={"/details/:mediaType/:mediaId"} element={<MediaPage />} />
       </Routes>
       <Footer />
