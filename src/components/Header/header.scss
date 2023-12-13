@@ -29,6 +29,29 @@
   border-right: 2px solid var(--borders-color);
 }
 
+.header__burger-menu-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  height: 100%;
+  border-right: 2px solid var(--borders-color);
+  button {
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 5;
+    &:hover {
+      border-radius: 50%;
+      background-color: $btn-hover-color;
+    }
+  }
+}
+
 .header__logo {
   display: flex;
   justify-content: center;
@@ -39,17 +62,11 @@
   }
 }
 
-.header__nav-links {
-  display: flex;
-  gap: 10px;
-  margin-left: 15px;
-}
-
-.header__right-menu {
+.header__right-section {
   display: flex;
 }
 
-.header__right-menu-search {
+.header__right-section-search {
   margin-right: 15px;
   button {
     padding: 8px;
@@ -70,7 +87,7 @@
   }
 }
 
-.header__right-menu-theme-toggle {
+.header__right-section-theme-toggle {
   margin-right: 15px;
   button {
     padding: 8px;
@@ -88,28 +105,6 @@
   img {
     height: auto;
     width: 30px;
-  }
-}
-
-.header__right-menu-profile {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .sign-buttons {
-    display: flex;
-    gap: 10px;
-    margin-right: 10px;
-    align-items: center;
-    justify-content: center;
-    .chakra-button {
-      &:hover {
-        background-color: $btn-hover-color;
-      }
-    }
-  }
-  .profile-info {
-    color: var(--text-color);
   }
 }
 
@@ -117,11 +112,5 @@
   width: auto;
   height: 25px;
   fill: var(--text-color);
-  stroke: var(--text-color);
-}
-
-.logout-icon {
-  width: auto;
-  height: 25px;
   stroke: var(--text-color);
 }
