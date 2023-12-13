@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./app.scss";
 import "./scss/themecolours.scss";
 import Header from "./components/Header/Header";
@@ -10,11 +10,28 @@ import SeriesPage from "./pages/SeriesPage/SeriesPage";
 import MediaPage from "./pages/MediaPage/MediaPage";
 import UpcomingPage from "./pages/UpcomingPage/UpcomingPage";
 import LoadingPage from "./pages/LoadingPage/LoadingPage";
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import AuthModal from "./components/AuthModal/AuthModal";
 import Footer from "./components/Footer/Footer";
 
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase/index";
+import { setUser } from "./store/slices/userSlice";
+
 function App() {
+  const dispatch = useDispatch();
   const { theme } = useSelector((state) => state.theme);
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      console.log(user);
+      const reduxObject = {
+        accessToken: user.accessToken,
+        displayName: user.displayName,
+      };
+      dispatch(setUser(reduxObject));
+    });
+  }, []);
 
   //TODO: make in separate hook, add theme memorization and user system theme check
   useEffect(() => {
@@ -31,6 +48,7 @@ function App() {
       <AuthModal />
       <Routes>
         <Route path={"/"} element={<HomePage />} />
+        <Route path={"*"} element={<ErrorPage />} />
         <Route path={"/upcoming"} element={<UpcomingPage />} />
         <Route path={"/movies"} element={<MoviesPage />} />
         <Route path={"/series"} element={<SeriesPage />} />
