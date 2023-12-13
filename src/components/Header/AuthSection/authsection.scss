@@ -1,0 +1,36 @@
+@use "../../../scss/index.scss" as *;
+
+.auth-section__main-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-section__sign-buttons {
+  display: flex;
+  gap: 10px;
+  margin-right: 10px;
+  align-items: center;
+  justify-content: center;
+  .chakra-button {
+    &:hover {
+      background-color: $btn-hover-color;
+    }
+  }
+}
+
+.auth-section__profile-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-color);
+  &:hover {
+    text-decoration: underline;
+  }
+  .logout-icon {
+    width: auto;
+    height: 25px;
+    stroke: var(--text-color);
+  }
+}
