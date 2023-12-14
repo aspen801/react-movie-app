@@ -9,7 +9,7 @@ import useWindowSize from "../../hooks/useWindowsSize";
 
 import "./header.scss";
 
-import { themeActions } from "../../store/slices/themeSlice";
+import { toggleTheme } from "../../store/slices/themeSlice";
 
 import mLogo from "/assets/mlogo.svg";
 import MoonIcon from "../../assets/moon.svg?react";
@@ -29,12 +29,10 @@ const Header = () => {
   const location = useLocation();
   const windowSize = useWindowSize();
 
-  useEffect(() => {
-    console.log("User changed!");
-  }, [user]);
+  useEffect(() => {}, [user]);
 
   const handleThemeChange = () => {
-    dispatch(themeActions.toggleTheme());
+    dispatch(toggleTheme());
   };
 
   useEffect(() => {
