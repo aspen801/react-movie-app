@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import "./app.scss";
 import "./scss/themecolors.scss";
 import Header from "./components/Header/Header";
@@ -14,6 +14,7 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import AuthModal from "./components/AuthModal/AuthModal";
 import Footer from "./components/Footer/Footer";
+import useTheme from "./hooks/useTheme";
 
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/index";
@@ -21,11 +22,11 @@ import { setUser } from "./store/slices/userSlice";
 
 function App() {
   const dispatch = useDispatch();
-  const { theme } = useSelector((state) => state.theme);
+
+  useTheme();
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      console.log(user);
       const reduxObject = {
         accessToken: user.accessToken,
         displayName: user.displayName,
@@ -33,14 +34,6 @@ function App() {
       dispatch(setUser(reduxObject));
     });
   }, []);
-
-  //TODO: make in separate hook, add theme memorization and user system theme check
-  useEffect(() => {
-    const setTheme = () => {
-      document.documentElement.setAttribute("theme-mode", theme);
-    };
-    setTheme();
-  }, [theme]);
 
   return (
     <>
