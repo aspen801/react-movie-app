@@ -12,6 +12,21 @@
   &.visible {
     display: flex;
   }
+
+  .closing-cross {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    .icon {
+      stroke: $btn-active-color;
+      width: auto;
+      height: 50px;
+      &:hover {
+        stroke: var(--text-color);
+      }
+    }
+  }
 }
 
 .auth-modal__heading {
@@ -68,19 +83,4 @@
   margin-top: 25px;
   justify-content: center;
   align-items: center;
-}
-
-.closing-cross {
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-  top: 0;
-  .icon {
-    stroke: $btn-active-color;
-    width: auto;
-    height: 50px;
-    &:hover {
-      stroke: var(--text-color);
-    }
-  }
 }
