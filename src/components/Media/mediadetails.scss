@@ -28,15 +28,22 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--main-bg-color-transparent);
   &.visible {
     display: flex;
   }
 }
+
 .media-details__modal-closing-cross {
+  cursor: pointer;
   position: absolute;
-  top: 0;
-  right: 5px;
+  right: 5%;
+  top: 20px;
+  .icon {
+    stroke: var(--text-color);
+    width: auto;
+    height: 80px;
+  }
 }
 
 .media-details__trailer-modal-container {
@@ -47,8 +54,8 @@
   justify-content: center;
   align-items: center;
   padding: 9px;
-  width: 95%;
-  height: 90%;
+  width: 80%;
+  height: 80%;
   bottom: $header-height - 40px;
   background-color: var(--main-bg-color);
   iframe {

@@ -56,13 +56,12 @@ const MediaDetails = ({ details, videos, mediaType }) => {
   return (
     <div className="media-details__main-wrapper">
       <div className={`media-details__trailer-modal ${trailerModalOpen ? "visible" : ""}`}>
+        <section>
+          <button className="media-details__modal-closing-cross" onClick={handleTrailerModalOpen}>
+            <CrossIcon className="icon" />
+          </button>
+        </section>
         <div className="media-details__trailer-modal-container">
-          <section>
-            <button className="closing-cross" onClick={handleTrailerModalOpen}>
-              <CrossIcon className="icon" />
-            </button>
-          </section>
-
           {videos.results.length > 0 ? (
             <iframe width="100%" height="100%" src={`//www.youtube-nocookie.com/embed/${videos.results[0].key}`} allowfullscreen />
           ) : (
