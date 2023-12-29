@@ -36,12 +36,13 @@ const MediaCard = ({ media, mediaType }) => {
             <p className="start">
               <span>★</span>
               {media.vote_average?.toString().slice(0, 3)}
-            </p>{" "}
-            {/*(mediaDetails && mediaDetails.genres[0].name) || "No data"*/}
+            </p>
             <hr />
             <p className="center">{media.release_date ? media.release_date.split("-")[0] : media.first_air_date?.split("-")[0] || "TBA"}</p>
             <hr />
-            <p className="end">{mediaDetails?.runtime ? useTimeConvert(mediaDetails.runtime) : mediaDetails && `ep${mediaDetails.number_of_episodes}`}</p>
+            <p className="end">
+              {mediaDetails?.runtime ? useTimeConvert(mediaDetails?.runtime) : (mediaDetails?.number_of_episodes && `ep${mediaDetails?.number_of_episodes}`) || "TBA"}
+            </p>
           </div>
         </div>
       </div>
