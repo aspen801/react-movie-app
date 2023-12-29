@@ -4,6 +4,7 @@ html[theme-mode="dark"] {
   --text-color: #{$text-color};
   --header-bg-color: #{$header-bg-color};
   --main-bg-color: #{$main-bg-color};
+  --main-bg-color-transparent: #{rgba($main-bg-color, 0.8)};
   --secondary-bg-color: #{$secondary-bg-color};
   --borders-color: #{$borders-color};
 }
@@ -12,6 +13,7 @@ html[theme-mode="light"] {
   --text-color: #{$light-text-color};
   --header-bg-color: #{$light-header-bg-color};
   --main-bg-color: #{$light-main-bg-color};
+  --main-bg-color-transparent: #{rgba($light-main-bg-color, 0.8)};
   --secondary-bg-color: #{$light-secondary-bg-color};
   --borders-color: #{$light-borders-color};
 }
