@@ -1,5 +1,7 @@
 # Movie Explorer
 
+![Preview](public/assets/preview-homepage.png)
+
 ⚡️[Live Demo](https://aspen-movie-app.netlify.app/)
 
 **Movie Explorer** is a React-based web application that allows users to explore information about movies sourced from the TMDb API. The application utilizes various technologies such as React, Redux Toolkit, SCSS for styling, Firebase Authentication, and Firebase Realtime Database for backend functionality.
@@ -29,11 +31,19 @@
 - View detailed information about a specific movie or TV show on its dedicated page.
 - Browse similar recommended movies or TV shows on the details page.
 
+  ![](public/assets/preview-movie-page.png)
+
 ### 🔎Global Search
 - Utilize a global search feature to find movies or TV shows across the entire site.
+
+  ![](public/assets/preview-search.png)
 
 ### ❤️Favorites
 - Authenticated users can add movies or TV shows to their favorites list for quick access.
 
 ### 🌚🌝Theme Switching
 - Toggle between light and dark themes for a personalized viewing experience.
+
+# Screenshots
+
+  ![](public/assets/preview-homepage-full.png)
