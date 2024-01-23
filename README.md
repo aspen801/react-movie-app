@@ -31,8 +31,6 @@
 - Dedicated pages for upcoming movie premieres.
 - View detailed information about a specific movie or TV show on its dedicated page.
 - Browse similar recommended movies or TV shows on the details page.
-
-  ![](public/assets/preview-movie-page.png)
   
 
 ### 🔎Global Search
