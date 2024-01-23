@@ -40,6 +40,7 @@
 
 ### ❤️Favorites
 - Authenticated users can add movies or TV shows to their favorites list for quick access.
+  ![](public/assets/preview-favorites.png)
 
 ### 🌚🌝Theme Switching
 - Toggle between light and dark themes for a personalized viewing experience.
