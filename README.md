@@ -24,6 +24,7 @@
 ### 🔒Authentication
 - Users can sign up and log in securely using Firebase Authentication.
 - Authenticated users have access to personalized features.
+  
 
 ### 🎥Movie/TV Show Details
 - Explore trending, now in theaters, popular, and top-rated movies and TV shows on the homepage.
@@ -32,19 +33,23 @@
 - Browse similar recommended movies or TV shows on the details page.
 
   ![](public/assets/preview-movie-page.png)
+  
 
 ### 🔎Global Search
 - Utilize a global search feature to find movies or TV shows across the entire site.
 
   ![](public/assets/preview-search.png)
+  
 
 ### ❤️Favorites
 - Authenticated users can add movies or TV shows to their favorites list for quick access.
-- 
+ 
   ![](public/assets/preview-favorites.png)
+  
 
 ### 🌚🌝Theme Switching
 - Toggle between light and dark themes for a personalized viewing experience.
+
 
 # Screenshots
 
