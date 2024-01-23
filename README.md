@@ -54,3 +54,6 @@
 # Screenshots
 
   ![](public/assets/preview-homepage-full.png)
+
+
+  ![](public/assets/preview-movie-page.png)
