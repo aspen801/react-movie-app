@@ -23,7 +23,7 @@
 - Users can sign up and log in securely using Firebase Authentication.
 - Authenticated users have access to personalized features.
 
-### Movie/TV Show Details
+### 🎥Movie/TV Show Details
 - Explore trending, now in theaters, popular, and top-rated movies and TV shows on the homepage.
 - Dedicated pages for upcoming movie premieres.
 - View detailed information about a specific movie or TV show on its dedicated page.
