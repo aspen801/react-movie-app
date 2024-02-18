@@ -19,9 +19,9 @@ const ProfilePage = () => {
 
   const getData = async () => {
     if (user !== null) {
-      const data = await getFavoriteMovies(auth.currentUser.uid);
-      const mediaPromises = data.map((media) => getMediaById({ mediaType: media.mediaType, mediaId: media.mediaId }));
       try {
+        const data = await getFavoriteMovies(auth.currentUser.uid);
+        const mediaPromises = data.map((media) => getMediaById({ mediaType: media.mediaType, mediaId: media.mediaId }));
         const resolvedMediaData = await Promise.all(mediaPromises);
         setMediaData(
           resolvedMediaData.map((mediaData, index) => {
